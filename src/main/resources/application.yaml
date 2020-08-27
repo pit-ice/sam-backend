@@ -1,0 +1,63 @@
+server.port: 8888
+
+
+#server.servlet.context-path: /api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+mybatis:
+#  config-location: mybatis/sqlmap-config.xml
+  mapper-locations: mybatis/**/*.xml
+  type-aliases-package: com.skgc.vrd.techsupport.model,com.skgc.vrd.account.model
+
+
+# App Properties
+vrd-backend:
+  app:
+    jwtSecret: vrdBackendSecretKey
+    jwtExpirationMs: 86400000 
+
+ 
+
+# App Properties
+sam-backend:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000 
+
+
+spring:
+  profiles:
+    active: local
+    
+  jpa:
+    properties:
+      hibernate:
+        jdbc.lob.non_contextual_creation: true
+        # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        dialect: org.hibernate.dialect.MariaDBDialect
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate.ddl-auto: update   
+     
+  datasource:
+    url: jdbc:h2:./skgc-vrd-local-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    url: jdbc:h2:mem:skgc-vrd-local.db;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
+ 
+---
+spring:
+  profiles: dev
+ 
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver 
+    url: jdbc:mariadb://vrd-mariadb.mariadb.database.azure.com:3306/vrd-test?useSSL=true&characterEncoding=UTF-8&serverTimezone=UTC 
+    username: vrdadmin@vrd-mariadb
+    password: Admin123
+    
+server.port: 8080
