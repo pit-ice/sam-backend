@@ -21,10 +21,42 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: sam-backend
-        image: bekube/sam-backend:latest
+        image: hyghyk/sam-backend:latest
         imagePullPolicy: Always
+        args: ["--spring.profiles.active=dev","--spring.config.location=/deployments/config/application-dev.yaml"]
         ports:
         - containerPort: 8080
+        env:
+        - name: MARIADB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: mariadb-username
+        - name: MARIADB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: mariadb-password
+        - name: MONGODB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: mongodb-username
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: mongodb-password
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: redis-password
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: sam-backend-secretmap
+              key: jwt-secret
         readinessProbe:
           failureThreshold: 3
           httpGet:
@@ -50,3 +82,15 @@ spec:
             cpu: 250m
           limits:
             cpu: 500m
+        volumeMounts:
+          - name: config
+            mountPath: "/deployments/config"
+            readOnly: true
+                          
+      volumes:
+        - name: config
+          configMap:
+            name: sam-backend-configmap
+            items:
+              - key: application-dev.yaml
+                path: application-dev.yaml
