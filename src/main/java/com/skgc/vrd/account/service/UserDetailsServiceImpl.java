@@ -47,6 +47,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return userMapper.findByAll();
 	}
 	
+	
+	public UserEntity modifyUser(UserEntity user) {
+		return userRepository.save(user);
+		 
+	}
 
 
 }

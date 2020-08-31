@@ -1,0 +1,60 @@
+
+    
+management:
+#  health:
+#    azure-cosmos.enabled: true
+  endpoint:
+    restart:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+spring:
+#  profiles: dev
+#  
+  jpa:
+    properties:
+      hibernate:
+        jdbc.lob.non_contextual_creation: true
+        # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        dialect: org.hibernate.dialect.MariaDBDialect
+        show_sql: true
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate.ddl-auto: update    
+    
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver 
+#    url: jdbc:mariadb://vrd-mariadb.mariadb.database.azure.com:3306/vrd-test?useSSL=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mariadb://vrd-dev.mariadb.database.azure.com:3306/vrd-test?useSSL=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    username: vrdadmin@vrd-mariadb
+#    password: Admin123
+    username: vrd_admin@vrd-dev
+    password: maria12#$
+  data:
+    mongodb:
+      uri: mongodb://vrd-dev:kHOsnhFOpABVhr0HcF2zVo6khb38dGiRx8rLM15eoBXp13cAPXrmAWmLHEOSkN7nL8lQoHX1e1gxwSpXYnfIXg==@vrd-dev.mongo.cosmos.azure.com:10255/?ssl=true&retryWrites=false #&replicaSet=globaldb
+      database: vrd-dev
+  redis:
+    lettuce:
+       pool:
+         max-active: 10
+         max-idle: 10
+         min-idle: 2
+    host: 40.82.136.153
+    port: 6379
+    password: vrd1234
+
+# App Properties
+sam-backend:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000 
+            
+server.port: 8080
