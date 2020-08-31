@@ -1,7 +1,7 @@
 FROM maven:3.6.2-jdk-11 AS build
 COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
-RUN mvn -f /usr/src/app/pom.xml clean package
+RUN mvn -f /usr/src/app/pom.xml clean package -Dmaven.test.skip=true
  
 FROM mcr.microsoft.com/java/jdk:11-zulu-alpine 
 
