@@ -9,10 +9,10 @@
 #    database: vrd-dev
 ##    populateQueryMetrics: true
 
-mybatis:
-#  config-location: mybatis/sqlmap-config.xml
-  mapper-locations: mybatis/**/*.xml
-  type-aliases-package: com.skgc.vrd.techsupport.model,com.skgc.vrd.account.model
+#mybatis:
+##  config-location: mybatis/sqlmap-config.xml
+#  mapper-locations: mybatis/**/*.xml
+#  type-aliases-package: com.skgc.vrd.techsupport.model,com.skgc.vrd.account.model
 
 
 
@@ -45,18 +45,18 @@ spring:
 #    username: sa
 #    password: sa
     driverClassName: org.mariadb.jdbc.Driver 
-#    url: jdbc:mariadb://vrd-mariadb.mariadb.database.azure.com:3306/vrd-test?useSSL=true&characterEncoding=UTF-8&serverTimezone=UTC
-#    username: vrdadmin@vrd-mariadb
-#    password: Admin123
-    url: jdbc:mariadb://localhost:3306/vrd-test?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: dbtest1234
+    url: jdbc:mariadb://vrd-mariadb.mariadb.database.azure.com:3306/vrd-test?useSSL=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: vrdadmin@vrd-mariadb
+    password: Admin123
+#    url: jdbc:mariadb://localhost:3306/vrd-test?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+#    username: root
+#    password: dbtest1234
 
 
 
   data:
     mongodb:
-      uri: mongodb://vrd-dev:kHOsnhFOpABVhr0HcF2zVo6khb38dGiRx8rLM15eoBXp13cAPXrmAWmLHEOSkN7nL8lQoHX1e1gxwSpXYnfIXg==@vrd-dev.mongo.cosmos.azure.com:10255/?ssl=true&retryWrites=false #&replicaSet=globaldb
+      uri: mongodb://vrd-dev:kHOsnhFOpABVhr0HcF2zVo6khb38dGiRx8rLM15eoBXp13cAPXrmAWmLHEOSkN7nL8lQoHX1e1gxwSpXYnfIXg==@vrd-dev.mongo.cosmos.azure.com:10255/?ssl=true&retryWrites=false&replicaSet=globaldb
 #      host: vrd-dev.mongo.cosmos.azure.com
 #      port: 10255
       database: vrd-dev

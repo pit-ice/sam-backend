@@ -21,7 +21,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: sam-backend
-        image: hyghyk/sam-backend:latest
+        image: bekube/sam-backend:latest
         imagePullPolicy: Always
         args: ["--spring.profiles.active=dev","--spring.config.location=/deployments/config/application-dev.yaml"]
         ports:
