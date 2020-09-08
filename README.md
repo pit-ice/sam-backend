@@ -6,8 +6,12 @@
 https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi
 
 ### STS 개발툴 설정
-1. lombok 설치
-2. Spring boot App 실행 VM Args 설정변경(jar 패키징시 application.yaml이 제외되어 있음.k8s)
+1. OpenJDK 11을 기본으로 설치 
+2. lombok 설치
+   Maven Dependencies 내의 lombok.jar 파일 우클릭 후 Java Application 실행 후 STS 설치 위치에 install)
+3. Run Congfigurations -> maven build 시  Skip Test 체크
+4. Run Congfigurations -> Spring boot App -> JRE Tab 선택 후  VM Args 설정변경(jar 패키징시 application.yaml이 제외되어 있음.k8s)
+   -Dspring.config.location=${project_loc:sam-backend}/src/main/resources/application.yaml
    ![](./assets/sts-runconfig.png)
 
 ### Maven build & run
