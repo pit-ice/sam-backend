@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" style="margin:0; padding:0; background:#fff;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="Virtual R&D">
+<meta name="keywords" content="Virtual R&D">
+<meta name="description" content="Virtual R&D">
+<title>email -  Virtual R&D </title>   
+</head>
+
+<body style="margin:0; padding:0; font-family: NanumGothic, 나눔고딕, 'Nanum Gothic', '맑은 고딕', Malgun Gothic, HelveticaNeue, DroidSans,'AppleGothic', sans-serif, Helvetica;">
+<!-- mailWrap -->
+<div id="mailWrap" style="width:100%; padding:10px; box-sizing:border-box; ">
+	<div class="container" style="width:100%; max-width:750px;  margin:0 auto 0; border:1px solid #e7e7e7; ">
+	<!--- content --->
+
+			<!-- head -->
+			#parse( "${templateUrl}head.vm" )	    
+			<!-- // head -->
+			
+	    <div class="mailBox" style="width:100%; height:auto; padding:40px 16px 50px; text-align:center; box-sizing:border-box;">
+			<p style="margin:0; padding:0;"></p>
+        	<h3 style="font-size:1.500em; font-style:normal; margin-top:60px; margin-bottom:36px;">문의 답변</h3>
+        </div>
+
+			<!-- footer -->
+			#parse( "${templateUrl}footer.vm" )
+			<!-- // footer -->
+			
+        <!--- //content --->   
+    </div>
+</div>
+<!-- //mailWrap -->
+
+</body>
+</html>
+
+
+
+

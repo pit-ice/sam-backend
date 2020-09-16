@@ -19,7 +19,7 @@
 			<!-- // head -->
 			
 	    <div class="mailBox" style="width:100%; height:auto; padding:40px 16px 50px; text-align:center; box-sizing:border-box;">
-			<p style="margin:0; padding:0;"><img src="resources/images/mail_img.png" alt="" style="max-width:544px; width:100%;" /></p>
+			<p style="margin:0; padding:0;"></p>
         	<h3 style="font-size:1.500em; font-style:normal; margin-top:60px; margin-bottom:36px;">Email Template Test</h3>
         	<p style="text-align:left; font-size:16px; color:#757575; margin:0 auto; line-height:1.6; ">안녕하세요. 본 메일은 Email Template Test 용 Template 입니다.<br />
         	발송된 메일은 개발중 기능 테스트를 위해 발송되었습니다.		
