@@ -1,5 +1,6 @@
 package com.skgc.vrd.sendgrid.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.sendgrid.Email;
@@ -16,4 +17,6 @@ public class SendGridMailVO {
 	private Email from;										/* 발신자 정보 */
 	private Email to;										/* 수신자 정보 */
 	private List<String> filePathList;						/* 첨부 파일 경로 */
+	private String emailTemplateId;							/* 이메일 템플릿 아이디 */
+	private HashMap<String, Object> emailValueMap; 			/* 이메일 대채값 */
 }

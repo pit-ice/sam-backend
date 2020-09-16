@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ko" style="margin:0; padding:0; background:#fff;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="Virtual R&D">
+<meta name="keywords" content="Virtual R&D">
+<meta name="description" content="Virtual R&D">
+<title>email -  Virtual R&D </title>   
+</head>
+
+<body style="margin:0; padding:0; font-family: NanumGothic, 나눔고딕, 'Nanum Gothic', '맑은 고딕', Malgun Gothic, HelveticaNeue, DroidSans,'AppleGothic', sans-serif, Helvetica;">
+<!-- mailWrap -->
+<div id="mailWrap" style="width:100%; padding:10px; box-sizing:border-box; ">
+	<div class="container" style="width:100%; max-width:750px;  margin:0 auto 0; border:1px solid #e7e7e7; ">
+	<!--- content --->
+
+			<!-- head -->
+			#parse( "${templateUrl}head.vm" )	    
+			<!-- // head -->
+			
+	    <div class="mailBox" style="width:100%; height:auto; padding:40px 16px 50px; text-align:center; box-sizing:border-box;">
+			<p style="margin:0; padding:0;"><img src="resources/images/mail_img.png" alt="" style="max-width:544px; width:100%;" /></p>
+        	<h3 style="font-size:1.500em; font-style:normal; margin-top:60px; margin-bottom:36px;">Email Template Test</h3>
+        	<p style="text-align:left; font-size:16px; color:#757575; margin:0 auto; line-height:1.6; ">안녕하세요. 본 메일은 Email Template Test 용 Template 입니다.<br />
+        	발송된 메일은 개발중 기능 테스트를 위해 발송되었습니다.		
+
+        	</p>
+			<div style="width:90%; border:1px solid #ddd;  color:#7575757; font-size:16px; text-align:left; padding:20px;margin:38px auto 0;">
+				<p style="text-align:left; font-size:16px; color:#212121; margin:0 auto; line-height:1.6; ">Header / Footer 부분은 공통 영역으로 모든 Template에 공통적으로 들어갑니다.</p>
+				<p style="text-align:left; font-size:16px; color:#212121; margin:0 auto; line-height:1.6; ">아래 버튼 클릭시 Template에 전달된 Url 로 이동됩니다.</p>
+				<p style="text-align:left; font-size:16px; color:#212121; margin:0 auto; line-height:1.6; ">전달된 Url 은 ${emailValue.linkUrl} 입니다.</p>
+			</div>
+            <p style="padding:0; margin:0;"><a href="${emailValue.linkUrl}" style="display:inline-block; margin:40px auto 30px; padding:12px 30px 12px; background:#aaaaaa; border-radius:5px; font-size:0.875em; text-decoration:none; color:#fff;">URL Test Button</a></p>
+            <p style="font-size:14px; color:#757575; padding:0; margin:0;">※ 본 메일은 Sendgrid API를 통해 발송된 발신전용 메일 입니다. </p>
+        </div>
+
+			<!-- footer -->
+			#parse( "${templateUrl}footer.vm" )
+			<!-- // footer -->
+			
+        <!--- //content --->   
+    </div>
+</div>
+<!-- //mailWrap -->
+
+</body>
+</html>
+
+
+
+

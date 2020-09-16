@@ -1,6 +1,9 @@
 package com.skgc.vrd.sendgrid.service;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.http.ResponseEntity;
 
 import com.sendgrid.Email;
 import com.sendgrid.Personalization;
@@ -14,7 +17,7 @@ public interface SendGridService {
 	 * @param sendGridMail
 	 * @return
 	 */
-	public Response sendMail(SendGridMailVO sendGridMail);
+	public ResponseEntity<?> sendMail(SendGridMailVO sendGridMail);
 
 	/**
 	 * send grid 메일 전송
@@ -25,7 +28,7 @@ public interface SendGridService {
 	 * @param filePath 첨부파일 경로 - (옵션)
 	 * @return
 	 */
-	public Response sendMail(Email from, Email to, String content, String subject, List<String> filePathList);
+	public Response sendMail(Email from, Email to, String content, String subject, List<String> filePathList) throws IOException;
 	
 	/**
 	 * send grid 메일 전송
@@ -37,5 +40,5 @@ public interface SendGridService {
 	 * @param filePath 첨부파일 경로 - (옵션)
 	 * @return
 	 */
-	public Response sendMails(List<Personalization> personalizationList, Email from, Email to, String content, String subject, List<String> filePathList);
+	public Response sendMails(List<Personalization> personalizationList, Email from, Email to, String content, String subject, List<String> filePathList)  throws IOException;
 }

@@ -58,3 +58,15 @@ sam-backend:
     jwtExpirationMs: 86400000 
             
 server.port: 8080
+
+# sendgrid Email API
+sendgrid:
+  apikey: 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
+  valid-mime-types: #이메일 첨부파일로 가능한 파일 mime 타입
+    - image
+    - application/pdf
+    - application/vnd.openxmlformats-officedocument
+    - application/vnd.ms
+  max-send: 500 #한번에 최대 전송 가능한 메일 숫자
+  break-second : 30 # max-send 이상의 메일 전송시 sleep second
+  
