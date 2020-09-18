@@ -52,8 +52,6 @@ spring:
 #    username: root
 #    password: dbtest1234
 
-
-
   data:
     mongodb:
       uri: mongodb://vrd-dev:kHOsnhFOpABVhr0HcF2zVo6khb38dGiRx8rLM15eoBXp13cAPXrmAWmLHEOSkN7nL8lQoHX1e1gxwSpXYnfIXg==@vrd-dev.mongo.cosmos.azure.com:10255/?ssl=true&retryWrites=false&replicaSet=globaldb
@@ -72,7 +70,11 @@ spring:
     port: 6379
     password: vrd1234
 
-
+  servlet:
+    multipart:
+      max-file-size: 5000MB
+      max-request-size: 5000MB
+      
 logging:
   level:
     org.hibernate.SQL: DEBUG

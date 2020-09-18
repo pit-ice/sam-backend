@@ -51,6 +51,12 @@ spring:
     port: 6379
     password: vrd1234
 
+
+  servlet:
+    multipart:
+      max-file-size: 5000MB
+      max-request-size: 5000MB
+      
 # App Properties
 sam-backend:
   app:
